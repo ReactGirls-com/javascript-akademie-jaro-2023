@@ -1,0 +1,29 @@
+/* --- Nastavení box-sizing bez bližšího komentáře --- */
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+/* --------------------------------------------------- */
+
+.ctverecek {
+	color: lightgray;
+	background-color: dimgray;
+	width: 12rem;
+	height: 12rem;
+	border: 2px black solid;
+	border-radius: 10px;
+	margin: 1rem 0;
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+}
+
+.aktivni {
+	background-color: green;
+	color: yellow;
+	border: 2px gray solid;
+}

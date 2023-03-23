@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="events.css">
+	<title>ReactGirls, JavaScript akademie, jaro 2023, den 2</title>
+</head>
+
+<body>
+	<h1>Události</h1>
+	<p><button>Změň text nadpisu!</button></p>
+
+	<p id="uvod">Obvykle nechceme události na elementy navěšovat přímo v HTML, i když je to možné, nýbrž i samotnou
+		definici toho, které elementy reagují na jakou událost jakým způsobem, provádět z JavaScriptu, pomocí
+		<code><em>element</em>.addEventListener()</code>.
+	</p>
+	<p><button id="tlacitkoKUvodu">Změň text úvodu!</button></p>
+
+	<p>Při práci s událostmi se velmi často pracuje s tzv. anonymními funkcemi (funkcemi bez pojmenování), což si
+		ukážeme na našem čtverečku.</p>
+	<div class="ctverecek" id="prvni-ctverecek">
+		Čtvereček, který navíc může nebo nemusí být aktivní.
+	</div>
+
+	<p>Funkce obsluhující událost dostává jako parametr tzv. objekt události obsahující celou řadu informací o tom, jaká
+		událost nastala. Můžeme to využít například k tomu, že budeme mít jednu společnou funkci pro obsluhu události
+		vznikající nad různými elementy, kdy pak z objektu události zjistíme, nad kterým konkrétním elementem událost
+		nastala.</p>
+	<div class="kontejner-na-ctverecky">
+		<div class="ctverecek" id="druhy-ctverecek">
+			Druhý čtvereček, který může nebo nemusí být aktivní.
+		</div>
+		<div class="ctverecek" id="treti-ctverecek">
+			Třetí čtvereček, který může nebo nemusí být aktivní.
+		</div>
+		<div class="ctverecek" id="ctvrty-ctverecek">
+			Čtvrtý čtvereček, který může nebo nemusí být aktivní.
+		</div>
+	</div>
+
+	<p><button id="hodKostkou">Hoď kostkou:</button></p>
+	<p id="hodKostkouVysledek"></p>
+
+	<p><button id="hazejKostkouDoSestky">Házej kostkou, dokud nepadne šestka:</button></p>
+	<p id="hazejKostkouDoSestkyVysledek"></p>
+
+	<script src="events.js"></script>
+</body>
+
+</html>

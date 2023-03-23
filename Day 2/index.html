@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+	<title>ReactGirls, JavaScript akademie, jaro 2023, den 2</title>
+</head>
+
+<body>
+	<h1>DOM: propojení JavaScriptu s HTML a CSS</h1>
+
+	<p id="uvod">
+		Document Object Model (DOM) je standard, pomocí něhož můžeme z JavaScriptu libovolně měnit jak jakýkoliv obsah
+		vyjádřený v HTML, tak i jakýkoliv vzhled popsaný v CSS. V rámci DOMu se z naší stránky stane jakýsi strom
+		složený z jednotlivých elementů podle toho, jak jsou do sebe vzájemně vnořeny. K elementům v tomto stromu můžeme
+		z JavaScriptu přistupovat a libovolně je modifikovat (měnit jim obsah, měnit jim atributy, měnit jim styly).
+	</p>
+
+	<p>
+		<a title="‍Birger Eriksson, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons"
+			href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/742px-DOM-model.svg.png"><img
+				alt="DOM-model"
+				src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/232px-DOM-model.svg.png"></a>
+		(<a title="‍Birger Eriksson, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons"
+			href="https://commons.wikimedia.org/wiki/File:DOM-model.svg">zdroj</a>)
+	</p>
+
+	<p>
+		Postup pro práci s DOMem je typicky ten, že nejprve ve stromu vyhledáme element, který chceme modifikovat
+		(například pomocí <code>document.querySelector()</code>), a referenci na něj si uložíme do nějaké proměnné. S
+		její pomocí už potom můžeme snadno měnit například v elementu obsažený text, jeho atributy (třeba adresu
+		obrázku) nebo jakékoliv CSS vlastnosti.
+	</p>
+
+	<p>
+		<img id="face-emoji" src="yellow-face-angry.svg">
+	</p>
+
+	<div class="ctverecek">
+		Čtvereček, který navíc může nebo nemusí být aktivní.
+	</div>
+
+	<h2>Cvičení</h2>
+
+	<ol>
+		<li>Vyberte si na stránce libovolný element (třeba nadpis nebo odstavec) a změňte mu text.</li>
+		<li>Vyberte si na stránce libovolný element a změňte mu barvu textu a barvu pozadí.</li>
+		<li>Vyberte si na stránce libovolný element a nastavte mu text na tučný (nebo na kurzivu nebo mu změňte velikost
+			písma).</li>
+		<li>Najděte si někde obrázek kočky a obrázek psa a uložte si je do této složky s naší stránkou. Nejprve vložte
+			do stránky obrázek s kočkou a přesvěčte se, že se správně zobrazí. Potom přes JavaScript nalezněte tento
+			svůj element obrázku a změňte mu adresu, aby se zobrazil obrázek psa.</li>
+		<li>Nalezněte na stránce čtvereček a přidejte mu třídu <em>aktivni</em>.</li>
+		<li>Bonus: vzpomeňte si na CSS vlastnost <em>position</em> a její hodnotu <em>absolute</em>. Přidejte si na
+			stránku obrázek, kterému nastavíte právě absolutní pozici (nejspíš ještě v kombinaci s vlastnostmi
+			<em>top</em> a <em>left</em>). Následně obrázek opět nalezněte z JavaScriptu a změňte mu umístění.
+		</li>
+	</ol>
+
+	<hr>
+
+	<a href="events.html">Událostmi se budeme zabývat na samostatné stránce.</a>
+
+	<script src="index.js"></script>
+</body>
+
+</html>
