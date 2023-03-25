@@ -89,3 +89,21 @@ tlacitkoHazejKostkouDoSestky.addEventListener("click", function () {
 	let odstavecVysledek = document.querySelector("#hazejKostkouDoSestkyVysledek");
 	odstavecVysledek.innerHTML = vyslednyObsah;
 });
+
+// --------------------------------------------------
+
+// Variace na předchozí dvě ukázky. Každé stisknutí tlačítka vyvolá jeden hod kostkou. Výsledky jednotlivých hodů jsou
+// přidávány za sebe do odstavce k tomu určeného. Jakmile padne šestka, je tlačítko zneaktivněno, aby již nešlo kostkou
+// dále házet.
+let tlacitkoHazejKostkouDoSestkyPoJednom = document.querySelector("#hazejKostkouDoSestkyPoJednom");
+tlacitkoHazejKostkouDoSestkyPoJednom.addEventListener("click", function () {
+	// hození kostkou
+	let cisloNaKostce = hodKostkou(6);
+	// aktualizace výsledného obsahu o jeden obrázek
+	let odstavecVysledek = document.querySelector("#hazejKostkouDoSestkyPoJednomVysledek");
+	odstavecVysledek.innerHTML = odstavecVysledek.innerHTML + `<img src="dice-${cisloNaKostce}.svg"> `;
+	// podmíněné zneaktivnění tlačítka
+	if (cisloNaKostce === 6) {
+		tlacitkoHazejKostkouDoSestkyPoJednom.disabled = true;
+	}
+});
