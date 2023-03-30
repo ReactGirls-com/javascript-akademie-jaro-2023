@@ -13,7 +13,11 @@ window.addEventListener("load", function() {
 	let vygenerovaneCislo = nahodneCislo(minCislo, maxCislo);
 
 	let vstupnePolicko = document.querySelector("#number-input");
+	let odesilaciTlacitko = document.querySelector("#submit-button");
 
-	console.log(vstupnePolicko);
+	odesilaciTlacitko.addEventListener("click", function() {
+		let hadaneCislo = vstupnePolicko.value;
+		console.log(hadaneCislo)
+	});
 
 });
