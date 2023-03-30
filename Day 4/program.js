@@ -10,36 +10,47 @@ let maxCislo = 100;
 
 window.addEventListener("load", function() {
 
+	let pocitadloPokusu = 0;
 	let vygenerovaneCislo = nahodneCislo(minCislo, maxCislo);
-	// console.log('vygenerovane cislo', vygenerovaneCislo)
+	console.log("vygenerovane cislo", vygenerovaneCislo);
 
 	let vstupnePolicko = document.querySelector("#number-input");
 	let odesilaciTlacitko = document.querySelector("#submit-button");
+	let restartovaciTlacitko = document.querySelector("#play-again-button");
 	let komunikacniOkenko = document.querySelector("#message");
 
-	vstupnePolicko.focus()
+	restartovaciTlacitko.addEventListener('click', function () {
+		document.location.reload()
+	})
+
+	vstupnePolicko.focus();
 
 	function vyhodnotHru () {
+		pocitadloPokusu++;
 		let hadaneCislo = Number(vstupnePolicko.value);
 
 		if (hadaneCislo === vygenerovaneCislo) {
-			komunikacniOkenko.innerHTML = "Gratulujem, je to presne ono."
+			komunikacniOkenko.innerHTML = `Gratuluji, myslel jsem na cislo ${hadaneCislo}. Potrebovala jsi ${pocitadloPokusu} pokusu.`;
+			odesilaciTlacitko.classList.add('hiddenElement')
+			restartovaciTlacitko.classList.remove('hiddenElement')
 		} else if (hadaneCislo < vygenerovaneCislo) {
-			komunikacniOkenko.innerHTML = "Cislo je nizsi nez to, na ktere myslim."
+			komunikacniOkenko.innerHTML = `Cislo ${hadaneCislo} je nizsi nez to, na ktere myslim.`;
 		} else if (hadaneCislo > vygenerovaneCislo) {
-			komunikacniOkenko.innerHTML = "Cislo je vyssi nez to, na ktere myslim."
+			komunikacniOkenko.innerHTML = `Cislo ${hadaneCislo} je vyssi nez to, na ktere myslim.`;
 		}
 
+		vstupnePolicko.value = "";
+		vstupnePolicko.focus();
 	}
 
-	vstupnePolicko.addEventListener('keypress', function (event) {
-		if (event.key === 'Enter') {
-			vyhodnotHru()
+	vstupnePolicko.addEventListener("keypress", function(event) {
+		if (event.key === "Enter") {
+			vyhodnotHru();
 		}
-	})
+	});
 
 	odesilaciTlacitko.addEventListener("click", function() {
-		vyhodnotHru()
+		vyhodnotHru();
 	});
 
 });

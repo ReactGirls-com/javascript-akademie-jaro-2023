@@ -110,5 +110,8 @@ button {
 
 #play-again-button {
 	background-color: hotpink;
-	display: none;
+}
+
+.hiddenElement {
+  display: none;
 }
