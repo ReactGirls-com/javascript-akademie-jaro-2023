@@ -17,7 +17,9 @@ window.addEventListener("load", function() {
 	let odesilaciTlacitko = document.querySelector("#submit-button");
 	let komunikacniOkenko = document.querySelector("#message");
 
-	odesilaciTlacitko.addEventListener("click", function() {
+	vstupnePolicko.focus()
+
+	function vyhodnotHru () {
 		let hadaneCislo = Number(vstupnePolicko.value);
 
 		if (hadaneCislo === vygenerovaneCislo) {
@@ -28,6 +30,16 @@ window.addEventListener("load", function() {
 			komunikacniOkenko.innerHTML = "Cislo je vyssi nez to, na ktere myslim."
 		}
 
+	}
+
+	vstupnePolicko.addEventListener('keypress', function (event) {
+		if (event.key === 'Enter') {
+			vyhodnotHru()
+		}
+	})
+
+	odesilaciTlacitko.addEventListener("click", function() {
+		vyhodnotHru()
 	});
 
 });
